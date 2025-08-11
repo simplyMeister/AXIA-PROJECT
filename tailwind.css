@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #2563EB; /* blue-600 */
+  --color-primary-50: #EFF6FF; /* blue-50 */
+  --color-primary-100: #DBEAFE; /* blue-100 */
+  --color-primary-500: #3B82F6; /* blue-500 */
+  --color-primary-600: #2563EB; /* blue-600 */
+  --color-primary-700: #1D4ED8; /* blue-700 */
+  
+  /* Secondary Colors */
+  --color-secondary: #64748B; /* slate-500 */
+  --color-secondary-100: #F1F5F9; /* slate-100 */
+  --color-secondary-200: #E2E8F0; /* slate-200 */
+  --color-secondary-300: #CBD5E1; /* slate-300 */
+  --color-secondary-400: #94A3B8; /* slate-400 */
+  --color-secondary-500: #64748B; /* slate-500 */
+  --color-secondary-600: #475569; /* slate-600 */
+  
+  /* Accent Colors */
+  --color-accent: #F59E0B; /* amber-500 */
+  --color-accent-50: #FFFBEB; /* amber-50 */
+  --color-accent-100: #FEF3C7; /* amber-100 */
+  --color-accent-500: #F59E0B; /* amber-500 */
+  --color-accent-600: #D97706; /* amber-600 */
+  
+  /* Background Colors */
+  --color-background: #FAFAFA; /* gray-50 */
+  --color-surface: #FFFFFF; /* white */
+  
+  /* Text Colors */
+  --color-text-primary: #1E293B; /* slate-800 */
+  --color-text-secondary: #64748B; /* slate-500 */
+  
+  /* Status Colors */
+  --color-success: #10B981; /* emerald-500 */
+  --color-success-50: #ECFDF5; /* emerald-50 */
+  --color-success-100: #D1FAE5; /* emerald-100 */
+  --color-success-500: #10B981; /* emerald-500 */
+  
+  --color-warning: #F59E0B; /* amber-500 */
+  --color-warning-50: #FFFBEB; /* amber-50 */
+  --color-warning-100: #FEF3C7; /* amber-100 */
+  --color-warning-500: #F59E0B; /* amber-500 */
+  
+  --color-error: #EF4444; /* red-500 */
+  --color-error-50: #FEF2F2; /* red-50 */
+  --color-error-100: #FEE2E2; /* red-100 */
+  --color-error-500: #EF4444; /* red-500 */
+  
+  /* Border Colors */
+  --color-border: #E2E8F0; /* slate-200 */
+  --color-border-light: #F1F5F9; /* slate-100 */
+  
+  /* Shadow Values */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+  
+  /* Animation Timing */
+  --timing-fast: 150ms;
+  --timing-normal: 200ms;
+  --timing-slow: 300ms;
+  --easing-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Theme Variables */
+body.dark {
+  /* Primary Colors in Dark Mode */
+  --color-primary: #3B82F6; /* blue-500 */
+  --color-primary-50: #1E3A8A; /* blue-900 */
+  --color-primary-100: #1E40AF; /* blue-800 */
+  --color-primary-500: #3B82F6; /* blue-500 */
+  --color-primary-600: #2563EB; /* blue-600 */
+  --color-primary-700: #1D4ED8; /* blue-700 */
+  
+  /* Secondary Colors in Dark Mode */
+  --color-secondary: #94A3B8; /* slate-400 */
+  --color-secondary-100: #334155; /* slate-700 */
+  --color-secondary-200: #475569; /* slate-600 */
+  --color-secondary-300: #64748B; /* slate-500 */
+  --color-secondary-400: #94A3B8; /* slate-400 */
+  --color-secondary-500: #CBD5E1; /* slate-300 */
+  --color-secondary-600: #E2E8F0; /* slate-200 */
+  
+  /* Accent Colors in Dark Mode */
+  --color-accent: #FBBF24; /* amber-400 */
+  --color-accent-50: #92400E; /* amber-800 */
+  --color-accent-100: #B45309; /* amber-700 */
+  --color-accent-500: #FBBF24; /* amber-400 */
+  --color-accent-600: #F59E0B; /* amber-500 */
+  
+  /* Background Colors in Dark Mode */
+  --color-background: #0F172A; /* slate-900 */
+  --color-surface: #1E293B; /* slate-800 */
+  
+  /* Text Colors in Dark Mode */
+  --color-text-primary: #F1F5F9; /* slate-100 */
+  --color-text-secondary: #94A3B8; /* slate-400 */
+  
+  /* Border Colors in Dark Mode */
+  --color-border: #475569; /* slate-600 */
+  --color-border-light: #334155; /* slate-700 */
+  
+  /* Shadow Values in Dark Mode */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Base Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+}
+
+/* Custom Component Classes */
+.card-elevation {
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--timing-normal) var(--easing-smooth);
+}
+
+.card-elevation:hover {
+  box-shadow: var(--shadow-md);
+  transform: scale(1.02);
+  transition: all var(--timing-normal) ease-out;
+}
+
+.focus-ring {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.shimmer {
+  background: linear-gradient(90deg, 
+    var(--color-secondary-100) 25%, 
+    var(--color-secondary-200) 50%, 
+    var(--color-secondary-100) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.expand-collapse {
+  transition: height var(--timing-slow) var(--easing-smooth);
+}
+
+.search-highlight {
+  background-color: var(--color-accent-100);
+  transition: background-color var(--timing-fast) ease-in-out;
+}
+
+.theme-transition {
+  transition: all var(--timing-slow) ease-in-out;
+}
+
+/* Typography Classes */
+.font-data {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Utility Classes */
+.border-light {
+  border-color: var(--color-border);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Modal Styles */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+  #modal-backdrop .max-w-2xl {
+    max-width: 95vw;
+    margin: 1rem;
+  }
+}
+
+/* Dark mode hover states */
+body.dark .hover\:bg-secondary-100:hover {
+  background-color: var(--color-secondary-100);
+}
+
+body.dark .hover\:bg-primary-50:hover {
+  background-color: var(--color-primary-50);
+}
+
+body.dark .hover\:bg-primary-100:hover {
+  background-color: var(--color-primary-100);
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition: background-color var(--timing-slow) ease-in-out,
+              border-color var(--timing-slow) ease-in-out,
+              color var(--timing-slow) ease-in-out;
+}
